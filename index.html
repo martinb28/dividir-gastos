@@ -4,19 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>División de Gastos</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div id="app">
+    <div id="app" class="container mt-5">
         <h1>División de Gastos</h1>
         <form id="expense-form">
-            <input type="text" id="name" placeholder="Nombre del participante" required>
-            <input type="number" id="amount" placeholder="Gasto" required>
-            <button type="submit">Agregar</button>
+            <div class="form-group">
+                <input type="text" id="name" class="form-control" placeholder="Nombre del participante" required>
+            </div>
+            <div class="form-group">
+                <input type="number" id="amount" class="form-control" placeholder="Gasto" required>
+            </div>
+            <button type="submit" class="btn btn-primary btn-block">Agregar</button>
         </form>
-        <ul id="participants"></ul>
-        <button id="calculate">Calcular</button>
-        <div id="results"></div>
+        <ul id="participants" class="list-group"></ul>
+        <button id="calculate" class="btn btn-success btn-block mt-3">Calcular</button>
+        <div id="results" class="mt-3"></div>
     </div>
     <script src="script.js"></script>
 </body>

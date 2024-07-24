@@ -73,6 +73,14 @@ form button:hover {
     padding: 10px;
     margin-bottom: 10px;
     border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#participants .btn-sm {
+    padding: 5px 10px;
+    font-size: 12px;
 }
 
 /* Calculate button styling */

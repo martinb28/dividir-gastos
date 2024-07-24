@@ -5,6 +5,21 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsDiv = document.getElementById('results');
     let participants = [];
 
+    // Función para renderizar la lista de participantes
+    const renderParticipants = () => {
+        participantsList.innerHTML = '';
+        participants.forEach((participant, index) => {
+            const listItem = document.createElement('li');
+            listItem.className = 'list-group-item d-flex justify-content-between align-items-center';
+            listItem.innerHTML = `
+                ${participant.name}: $${participant.amount.toFixed(2)}
+                <button class="btn btn-danger btn-sm" onclick="removeParticipant(${index})">Eliminar</button>
+            `;
+            participantsList.appendChild(listItem);
+        });
+    };
+
+    // Función para agregar participante
     form.addEventListener('submit', (event) => {
         event.preventDefault();
         const name = document.getElementById('name').value;
@@ -12,13 +27,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         if (name && !isNaN(amount)) {
             participants.push({ name, amount });
-            const listItem = document.createElement('li');
-            listItem.textContent = `${name}: $${amount.toFixed(2)}`;
-            participantsList.appendChild(listItem);
+            renderParticipants();
             form.reset();
         }
     });
 
+    // Función para eliminar participante
+    window.removeParticipant = (index) => {
+        participants.splice(index, 1);
+        renderParticipants();
+    };
+
+    // Función para calcular la división de gastos
     calculateButton.addEventListener('click', () => {
         const totalAmount = participants.reduce((sum, participant) => sum + participant.amount, 0);
         const averageAmount = totalAmount / participants.length;
