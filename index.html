@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>División de Gastos</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <h1>División de Gastos</h1>
+        <form id="expense-form">
+            <input type="text" id="name" placeholder="Nombre del participante" required>
+            <input type="number" id="amount" placeholder="Gasto" required>
+            <button type="submit">Agregar</button>
+        </form>
+        <ul id="participants"></ul>
+        <button id="calculate">Calcular</button>
+        <div id="results"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

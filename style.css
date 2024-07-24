@@ -1,0 +1,117 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and container styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f4f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+#app {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 600px;
+}
+
+/* Header styling */
+h1 {
+    text-align: center;
+    color: #1a73e8;
+    margin-bottom: 20px;
+}
+
+/* Form styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+form input {
+    padding: 10px;
+    border: 1px solid #c3cfd9;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+form button {
+    padding: 10px;
+    background-color: #1a73e8;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #1558b0;
+}
+
+/* Participants list styling */
+#participants {
+    list-style-type: none;
+    margin-bottom: 20px;
+}
+
+#participants li {
+    background-color: #e8f0fe;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Calculate button styling */
+#calculate {
+    padding: 10px;
+    background-color: #34a853;
+    color: #ffffff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#calculate:hover {
+    background-color: #2a7c3f;
+}
+
+/* Results styling */
+#results {
+    margin-top: 20px;
+    background-color: #e8f0fe;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+#results p {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: #1a1a1a;
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    #app {
+        padding: 15px;
+    }
+
+    form input, form button, #calculate {
+        font-size: 14px;
+    }
+}
