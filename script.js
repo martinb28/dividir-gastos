@@ -26,7 +26,12 @@ document.addEventListener('DOMContentLoaded', () => {
         const amount = parseFloat(document.getElementById('amount').value);
 
         if (name && !isNaN(amount)) {
-            participants.push({ name, amount });
+            const existingParticipant = participants.find(participant => participant.name === name);
+            if (existingParticipant) {
+                existingParticipant.amount += amount;
+            } else {
+                participants.push({ name, amount });
+            }
             renderParticipants();
             form.reset();
         }
