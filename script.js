@@ -47,6 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     calculateButton.addEventListener('click', () => {
         const totalAmount = participants.reduce((sum, participant) => sum + participant.amount, 0);
         const averageAmount = totalAmount / participants.length;
+
+        // Mostrar el total gastado y el promedio a pagar
+        resultsDiv.innerHTML = `
+            <p>Total gastado: $${totalAmount.toFixed(2)}</p>
+            <p>Cada persona debería aportar en promedio: $${averageAmount.toFixed(2)}</p>
+        `;
+
         const debts = participants.map(participant => ({
             name: participant.name,
             amount: participant.amount - averageAmount
@@ -55,8 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const creditors = debts.filter(debt => debt.amount > 0);
         const debtors = debts.filter(debt => debt.amount < 0);
 
-        resultsDiv.innerHTML = '';
-
+        // Mostrar las deudas entre participantes
         creditors.forEach(creditor => {
             debtors.forEach(debtor => {
                 if (creditor.amount === 0 || debtor.amount === 0) return;
